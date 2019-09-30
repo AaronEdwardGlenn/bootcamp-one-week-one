@@ -1,2 +1,17 @@
 # bootcamp-one-week-one
-YEE
+
+### About Me Page   
+
+**bold**
+_italics_
+
+- one 
+- two
+- three
+    -four 
+    -five
+
+-six
+
+
+
