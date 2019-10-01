@@ -1,61 +1,54 @@
+import { isCorrect } from './functions.js';
 
 const myButton = document.getElementById('action-button'); 
-export const isCorrect = (userInput) => {
-    if (userInput === 'yes') return true; 
 
-    return false; 
-}; 
-if (myButton){
 myButton.onclick = () => {
-    
+
     const showStory = document.getElementById('thanks');
     showStory.classList.remove('hidden');
 
     alert ('Welcome to my quiz'); 
-        const myConfirmation = confirm('Ready for Question 1?'); 
-        const userAnswer = prompt('My Favorite Color is Green (yes/no)'); 
-        const lowerCaseUserAnswer = userAnswer.toLowerCase(); 
-        const trimmedLowerCaseUserAnswer = lowerCaseUserAnswer.trim(); 
-    
-        if (trimmedLowerCaseUserAnswer === 'yes') {
-            alert ('right on'); 
-        } 
+    confirm('Ready for Question 1?'); 
+    const userAnswer = prompt('My Favorite Color is Green (yes/no)'); 
+    const lowerCaseUserAnswer = userAnswer.toLowerCase(); 
+    const trimmedLowerCaseUserAnswer = lowerCaseUserAnswer.trim(); 
 
-        else {
-            alert ('Nayyy'); 
-        }
+    const userIsCorrect1 = isCorrect(trimmedLowerCaseUserAnswer); 
+    if(userIsCorrect1) {
+        alert ('right on'); 
+    } 
+
+    else {
+        alert ('Nayyy'); 
+    }
 
 
     alert ('Question 2'); 
 
-        const userAnswer2 = prompt('My Favorite Tree is a Cedar (yes/no)');
-        const lowerCaseUserAnswer2 = userAnswer2.toLowerCase(); 
-        const trimmedLowerCaseUserAnswer2 = lowerCaseUserAnswer2.trim();  
-        
-        if (trimmedLowerCaseUserAnswer2 === 'yes') {
-            alert ('right on'); 
-        } 
+    const userAnswer2 = prompt('At the top of my plant list is a Cedar Tree (yes/no)');
+    const lowerCaseUserAnswer2 = userAnswer2.toLowerCase(); 
+    const trimmedLowerCaseUserAnswer2 = lowerCaseUserAnswer2.trim();  
 
-        else {
-            alert ('Nayyy'); 
-        }
+    const userIsCorrect2 = isCorrect(trimmedLowerCaseUserAnswer2); 
+    if(userIsCorrect2) {
+        alert ('right on'); 
+    } 
+
+    else {
+        alert ('Nayyy'); 
+    }
 
 
     alert ('Question 3'); 
-        const userAnswer3 = prompt('My Favorite Place is Mt Hood (yes/no)'); 
-        const lowerCaseUserAnswer3 = userAnswer3.toLowerCase(); 
-        const trimmedLowerCaseUserAnswer3 = lowerCaseUserAnswer3.trim();  
-        
-        if (trimmedLowerCaseUserAnswer3 === 'no') {
-            alert ('right on'); 
-        } 
+    const userAnswer3 = prompt('My Favorite Place is Mt Hood (yes/no)'); 
+    const lowerCaseUserAnswer3 = userAnswer3.toLowerCase(); 
+    const trimmedLowerCaseUserAnswer3 = lowerCaseUserAnswer3.trim();  
 
-        else {
-            alert ('Nayyy'); 
-        }
+    if(trimmedLowerCaseUserAnswer3 === 'no') {
+        alert ('right on'); 
+    } 
 
-
+    else {
+        alert ('Nayyy'); 
     }
-}
-  
-    
+};

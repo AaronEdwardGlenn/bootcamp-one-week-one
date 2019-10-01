@@ -2,13 +2,34 @@
     opacity: 0;
 }
 body{
-    background-image: url(../img/question-mark.jpg);    
+    background-image: url(../img/question-mark.jpg); 
+    background-repeat: repeat-y;    
     color: black; 
-    background-repeat: no-repeat; 
+    background-size: 110%;  
+    background-position: top; 
 }
 .yo {
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
     font-size: 400%; 
     text-align: center;
+}
+
+img {
+
+    width: 19%;
+    height: auto;
+
+}
+.top {
+
+    font-family: cursive; 
+    font-size: 300%; 
+text-align: center; 
+}
+
+.text {
+
+font-size: 20px; 
+
 }
