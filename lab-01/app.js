@@ -1,12 +1,11 @@
 
 const myButton = document.getElementById('action-button'); 
-
-const isCorect = (userInput) => {
+export const isCorrect = (userInput) => {
     if (userInput === 'yes') return true; 
 
     return false; 
 }; 
-
+if (myButton){
 myButton.onclick = () => {
     
     const showStory = document.getElementById('thanks');
@@ -57,6 +56,6 @@ myButton.onclick = () => {
 
 
     }
-
+}
   
     
