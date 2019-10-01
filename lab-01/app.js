@@ -40,11 +40,13 @@ myButton.onclick = () => {
 
 
     alert ('Question 3'); 
+
     const userAnswer3 = prompt('My Favorite Place is Mt Hood (yes/no)'); 
     const lowerCaseUserAnswer3 = userAnswer3.toLowerCase(); 
-    const trimmedLowerCaseUserAnswer3 = lowerCaseUserAnswer3.trim();  
+    const trimmedLowerCaseUserAnswer3 = lowerCaseUserAnswer3.trim(); 
+    const userIsCorrect3 = isCorrect(trimmedLowerCaseUserAnswer3); 
 
-    if(trimmedLowerCaseUserAnswer3 === 'no') {
+    if(userIsCorrect3) {
         alert ('right on'); 
     } 
 
