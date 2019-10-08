@@ -1,0 +1,23 @@
+body {
+    background-image: linear-gradient(to bottom right, red, yellow);
+    background-repeat: no-repeat;
+    background-size: 3000px 1000px; 
+    font-size: 180%; 
+}
+
+
+h1 {
+    color: rgb(3, 3, 109); 
+    font-family: cursive; 
+    font-size: 300%; 
+}
+
+
+.rules {
+    border: dotted; 
+}
+
+
+h2 {
+    color: white; 
+}
