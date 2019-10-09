@@ -86,3 +86,26 @@ const birds = [
 ];
 
 export default birds;
+
+export const cart = [{
+    id: 'scrub-jay',
+    quantity: 5
+}, {
+    id: 'wood-thrush',
+    quantity: 2
+}, {
+    id: 'white-breasted-nuthatch',
+    quantity: 1
+}, {
+    id: 'northern-mockingbird',
+    quantity: 5
+}, {
+    id: 'mountian-bluebird',
+    quantity: 6
+}, {
+    id: 'cedar-waxwing',
+    quantity: 4
+}, {
+    id: 'black-capped-chickadee',
+    quantity: 10
+}];
