@@ -4,7 +4,9 @@ import renderBirds from './render-birds.js';
 const list = document.getElementById('birds');
 
 for (let i = 0; i < birds.length; i++) {
-    const bird = birds[i];
-    const dom = renderBirds(bird);
+    const birdString = birds[i];
+    const dom = renderBirds(birdString);
     list.appendChild(dom);
 }
+
+
