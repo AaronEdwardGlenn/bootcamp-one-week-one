@@ -1,7 +1,7 @@
 const scrubJay = {
     id: 'scrub-jay',
     name: 'Scrub Jay',
-    image: 'scrub_jay.jpg',
+    image: '../assets/scrub_jay.jpg',
     family: 'Crow',
     Wingspan: '15 inches',
     Habitat: 'Oak woods, parks, and backyards.',
@@ -12,7 +12,7 @@ const scrubJay = {
 const woodThrush = {
     id: 'wood-thrush',
     name: 'Wood Thrush',
-    image: 'wood_thrush.jpg',
+    image: '../assets/wood_thrush.jpg',
     family: 'Thrush',
     Wingspan: '13 inches',
     Habitat: 'Parks and backyards.',
@@ -23,7 +23,7 @@ const woodThrush = {
 const whiteBreastedNuthatch = {
     id: 'white-breasted-nuthatch',
     name: 'White-Breated Nuthatch',
-    image: 'nuthatch.jpg',
+    image: '../assets/nuthatch.jpg',
     family: 'Nuthatch',
     Wingspan: '11 inches',
     Habitat: 'Areas with plentiful trees',
@@ -34,7 +34,7 @@ const whiteBreastedNuthatch = {
 const northernMockingbird = {
     id: 'northern-mockingbird',
     name: 'Northern Mockingbird',
-    image: 'mockingbird.jpg',
+    image: '../assets/mockingbird.jpg',
     family: 'Mimic thrush',
     Wingspan: '14 inches',
     Habitat: 'Backyards, pastures, orchards, and woodland edges',
@@ -45,7 +45,7 @@ const northernMockingbird = {
 const mountianBluebird = {
     id: 'mountian-bluebird',
     name: 'Mountian Bluebird',
-    image: 'bluebird.jpg',
+    image: '../assets/bluebird.jpg',
     family: 'Thrush',
     Wingspan: '14 inches',
     Habitat: 'Meadows and prairies.',
@@ -56,7 +56,7 @@ const mountianBluebird = {
 const cedarWaxwing = {
     id: 'cedar-waxwing',
     name: 'Cedar Waxwing',
-    image: 'waxwing.jpg',
+    image: '../assets/waxwing.jpg',
     family: 'Waxwing',
     Wingspan: '7 inches',
     Habitat: 'Open woodlands, parks, and backyards.',
@@ -67,7 +67,7 @@ const cedarWaxwing = {
 const blackCappedChickadee = {
     id: 'black-capped-chickadee',
     name: 'Black-Capped Chickadee',
-    image: 'chickadee.jpg',
+    image: '../assets/chickadee.jpg',
     family: 'Chickadee',
     Wingspan: '6 inches',
     Habitat: 'Wooded residential areas and open woodlands.',
@@ -89,23 +89,23 @@ export default birds;
 
 export const cart = [{
     id: 'scrub-jay',
-    quantity: 5
+    quantity: 1
 }, {
     id: 'wood-thrush',
-    quantity: 2
+    quantity: 1
 }, {
     id: 'white-breasted-nuthatch',
     quantity: 1
 }, {
     id: 'northern-mockingbird',
-    quantity: 5
+    quantity: 1
 }, {
     id: 'mountian-bluebird',
-    quantity: 6
+    quantity: 1
 }, {
     id: 'cedar-waxwing',
-    quantity: 4
+    quantity: 1
 }, {
     id: 'black-capped-chickadee',
-    quantity: 10
+    quantity: 1
 }];

@@ -47,8 +47,7 @@ test('renders a table row', assert => {
         quantity: 2
     }; 
 
-    const expected = '<tr><td>wood-thrush</td><td>2</td><td>21.00</td><td>10.25</td></tr>'
-    ;
+    const expected = '<tr><td>Wood Thrush</td><td>2</td><td>$21.04</td><td>$42.08</td></tr>';
      
     
     

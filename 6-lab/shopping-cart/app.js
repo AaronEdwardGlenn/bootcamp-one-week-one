@@ -1,41 +1,62 @@
 import renderTableRow from './render-table-row.js';
-import birds, { cart } from '../data/birds.js';
+import dataBirds from '../data/birds.js';
 import { makePrettyCurrency } from '../common/makePretty.js';
+
+import { CART_KEY } from '../products/render-birds.js';
 
 const tableElement = document.querySelector('tbody');
 
+export const getById = (id, birds) => {
+    let matchingBird;
 
-let cartTotal = 0;
-cart.forEach(birdsOrder => {
-    birds.forEach(birds => {
-        let birdsTotal;
-
-        if (birds.id === birdsOrder.id) {
-            const row = renderTableRow(birds, birdsOrder);
-
-            tableElement.appendChild(row);
-
-            birdsTotal = birds.price * birdsOrder.quantity;
-
-            cartTotal = cartTotal + birdsTotal;
+    birds.forEach(bird => {
+        if (bird.id === id) {
+            matchingBird = bird;
         }
     });
 
+    return matchingBird;
+};
+
+const getLineTotal = (order, item) => item.price * order.quantity;
+
+const getCartTotal = (cart, birds) => {
+    let cartTotal = 0;
+    cart.forEach(order => {
+        const orderBird = getById(order.id, birds);
+        const lineTotal = getLineTotal(order, orderBird);
+
+        cartTotal = cartTotal + lineTotal;
+    });
+
+    return cartTotal;
+};
+
+const addRow = (birdOrder, birds) => {
+    const orderBird = getById(birdOrder.id, birds);
+    const row = renderTableRow(orderBird, birdOrder);
+
+    tableElement.appendChild(row);
+};
+
+const addRows = (cart, birds) => {
+    cart.forEach(birdOrder => {
+        addRow(birdOrder, birds);
+    });
+};
+
+const buildTotalCell = (cart, birds) => {
     const totalCell = document.getElementById('order-total-cell');
+    const cartTotal = getCartTotal(cart, birds);
 
     totalCell.textContent = makePrettyCurrency(cartTotal);
+};
 
-    // // loop through the birdss array to find the birds that matches the birds of this order
-    // for (let i = 0; i < birdss.length; i++) {
-    //     // if the id of the birds matches the id of the order . . . 
-    //     if (birdss[i].id === birdsOrder.id) {
-    //         // go ahead and render the table row
-    //         const row = renderTableRow(birdss[i], birdsOrder);
+const buildTable = (cart, birds) => {
+    buildTotalCell(cart, birds);
+    addRows(cart, birds);
+};
 
-    //         tableElement.appendChild(row);
-    //     }
-    // }
+const javascriptReadableCart = JSON.parse(localStorage.getItem(CART_KEY));
 
-
-
-});
+buildTable(javascriptReadableCart, dataBirds);

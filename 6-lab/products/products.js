@@ -5,8 +5,9 @@ const list = document.getElementById('birds');
 
 for (let i = 0; i < birds.length; i++) {
     const birdString = birds[i];
-    const dom = renderBirds(birdString);
-    list.appendChild(dom);
+    const birdListElement = renderBirds(birdString);
+
+    list.appendChild(birdListElement);
 }
 
 

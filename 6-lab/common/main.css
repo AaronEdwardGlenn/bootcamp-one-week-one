@@ -32,8 +32,8 @@ header nav a {
 }
 
 blink {
-    animation: blinker 1.0s linear infinite;
-    color: #ffffff;
+    animation: blinker 11.1s linear infinite;
+    color: #54fc6a;
 }
 
 @keyframes blinker {  
@@ -43,7 +43,7 @@ blink {
 header nav a:hover {
     color: rgb(255, 80, 147);
     border: 1px solid whitesmoke;
-    animation: blinker 1s linear infinite;
+    animation: blinker .1s linear infinite;
 
 }
 

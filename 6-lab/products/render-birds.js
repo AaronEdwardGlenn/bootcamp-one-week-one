@@ -1,35 +1,115 @@
-function renderBirds(birds) {
-    const li = document.createElement('li');
-    li.className = birds.category;
-    li.title = birds.description;
+const emptyCart = [{ id: '', quantity: 0 }];
+export const CART_KEY = 'cart';
 
-    const h3 = document.createElement('h3');
-    h3.textContent = birds.name;
-    li.appendChild(h3);
+export const getById = (id, birds) => {
+    let matchingBird = { id, quantity: 1 };
 
-    const img = document.createElement('img');
-    img.src = '../assets/' + birds.image;
-    img.alt = birds.name + ' image';
-    li.appendChild(img);
 
-    const p = document.createElement('p');
-    p.className = 'price';
+    birds.forEach(bird => {
+        if (bird.id === id) {
+            matchingBird = bird;
+        }
+    });
 
-    const usd = '$' + birds.price.toFixed(2);
-    // const usd = birds.price.toLocaleString('en-US', { 
-    //     style: 'currency', 
-    //     currency: 'USD' 
-    // });
-    p.textContent = usd;
-    
-    const button = document.createElement('button');
-    button.textContent = 'Add';
-    button.value = birds.code;
-    p.appendChild(button);
+    return matchingBird;
+};
 
-    li.appendChild(p);
 
-    return li;
+export function findById(items, id) {
+    // loop the array
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+
+        // check the id against item.id
+        if (item.id === id) {
+            return item;
+        }
+    }
+
+    // loop done, nothing found
+    return null;
 }
 
-export default renderBirds;
+export const incrementInCartById = (id, cart) => {
+    let thereIsAMatch = false;
+    cart.forEach(order => {
+        if (order.id === id) {
+            order.quantity++;
+            thereIsAMatch = true;
+        }
+    });
+
+    if (thereIsAMatch) {
+        return;
+    } else {
+        const newItem = {
+            id: id,
+            quantity: 1,
+        };
+
+        cart.push(newItem);
+
+    }
+};
+
+const initializeEmptyCart = () => {
+    const serializedCart = JSON.stringify(emptyCart);
+
+    localStorage.setItem('cart', serializedCart);
+};
+
+const getCart = () => JSON.parse(localStorage.getItem(CART_KEY));
+
+const setCart = (currentCartInLocalStorage) => {
+    const serializedNewCart = JSON.stringify(currentCartInLocalStorage);
+    localStorage.setItem(CART_KEY, serializedNewCart);
+};
+
+export default (bird) => {
+
+    const birdElement = document.createElement('li');
+    birdElement.className = `${bird.category} bird-box`;
+    birdElement.title = bird.description;
+
+    const someHeader = document.createElement('h3');
+    someHeader.textContent = bird.name;
+    birdElement.appendChild(someHeader);
+
+    const someImage = document.createElement('img');
+    someImage.src = bird.image;
+    someImage.alt = bird.name + ' image';
+
+    birdElement.appendChild(someImage);
+
+    const pTag = document
+        .createElement('p');
+
+    pTag.className = 'price';
+    pTag.textContent = '$' + bird.price.toFixed(2);
+    birdElement.appendChild(pTag);
+
+    const myButton = document.createElement('button');
+
+    myButton.textContent = 'Add';
+    myButton.value = bird.id;
+    myButton.addEventListener('click', () => {
+       
+        let currentCartInLocalStorage = getCart();
+        if (!currentCartInLocalStorage) {
+            initializeEmptyCart();
+            currentCartInLocalStorage = getCart();
+        }
+
+        let birdToIncrement = findById(bird.id, currentCartInLocalStorage);
+
+        birdToIncrement && birdToIncrement.quantity + 1;
+     
+        incrementInCartById(bird.id, currentCartInLocalStorage);
+        setCart(currentCartInLocalStorage);
+    });
+
+
+    pTag.appendChild(myButton);
+
+    return birdElement;
+};
