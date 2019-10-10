@@ -1,12 +1,39 @@
 body{
     background-image: url("../assets/background1.jpg");
-
+    background-repeat: round;
+    margin-right: 150px;
+    margin-left: 150px; 
 }
 
 #birds {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(85, 83, 226);
+    color: white;
+    font-size: 125%; 
+}
+
+header nav a {
+    color: white;
+    border: 5px solid rgb(245, 241, 28);
+    padding: 13px 18px;
+    text-decoration: none;
+    transition: color 200ms ease-in;
+
+}
+
+header nav a:hover {
+    color: rgb(255, 80, 147);
+    border: 1px solid whitesmoke;
+    animation: blinker 1s linear infinite;
+
 }
 
 h2 {
@@ -21,8 +48,8 @@ h3 {
     background: white;
     border: 1px solid #aaa;
     border-radius: 15px;
-    width: 100px;
-    height: 150px;
+    width: 250px;
+    height: 300px;
     margin-right: 15px;
     margin-bottom: 15px;
     text-align: center;
@@ -31,8 +58,8 @@ h3 {
 }
 
 #birds li:hover {
-    box-shadow: 2px 2px 3px #bbb;
-    transform: translate3d(-1px, -1px, 0);
+    box-shadow: 8px 8px 6px rgb(124, 255, 107);
+    transform: translate3d(-3px, -3px, 0);
 }
 
 #birds li h3 {
@@ -41,10 +68,18 @@ h3 {
 }
 
 #birds li img {
-    width: 55%;
+    width: 75%;
     margin-top: 1px;
 }
 
+#birds {
+    /* padding: 10px;
+    display: flex;
+    flex-wrap: wrap; */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
 header nav a {
     color: white;
     border: 5px solid rgb(245, 241, 28);
@@ -55,7 +90,8 @@ header nav a {
 }
 
 .price {
-    font-size: 0.9rem;
+    font-size: 1.9rem;
+    font-family: cursive;
     position: absolute;
     bottom: 0;
     left: 0; 
@@ -68,8 +104,25 @@ header nav a {
 
 .price button {
     transition-property: inherit; 
+    padding: 15px; 
+
 }
 .price button:hover {
     background: rgb(255, 5, 5);
     color: white;
+    padding: 15px; 
 }
+
+.is-active {
+    animation-name: animate;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(28);
+    animation-fill-mode: forwards;
+  }
+   
+  @keyframes animate {
+    0%   { background-position: left;  }
+    50%  { background-position: right; }
+    100% { background-position: right; }
+  }
