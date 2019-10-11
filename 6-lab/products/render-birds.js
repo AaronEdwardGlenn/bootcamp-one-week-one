@@ -100,7 +100,7 @@ export default (bird) => {
             currentCartInLocalStorage = getCart();
         }
 
-        let birdToIncrement = findById(bird.id, currentCartInLocalStorage);
+        let birdToIncrement = findById(currentCartInLocalStorage, bird.id,);
 
         birdToIncrement && birdToIncrement.quantity + 1;
      
