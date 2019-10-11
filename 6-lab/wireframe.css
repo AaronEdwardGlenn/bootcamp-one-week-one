@@ -15,12 +15,9 @@ header {
 }
 
 header nav a {
-    color: white;
-    padding: 13px 18px;
-    text-decoration: none;
-    transition: color 200ms ease-in;
-    display: inline; 
-    
+     color: white;
+     text-decoration: none;
+
 }
 
 li{
@@ -28,6 +25,8 @@ li{
     background-color: blue; 
     border-radius: 100%;
     padding: 17px; 
+
+
     /* display: flex;
     flex-direction: row; */
 }
