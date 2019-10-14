@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="../common/main.css">
-    <title>ShoppingCart</title>
-
- 
-
 </head>
-
 <body>
-        <header>
-            <h1>Shopping Cart</h1>
-                <nav>
-                        <a href="../index.html">Home</a>
-                        <a href="../products/index.html">Buy a Bird</a>
-                    </nav>
+    <header>
+        <h1>Bird Shop Shopping Cart</h1>
+        <nav>
+            <a href="../">Home</a>
+            <a href="../products">Buy Birds</a>
+            <a href="./shopping-cart">Shopping Cart</a>
+        </nav>
+    </header>
+
+    <main>
         
-        
-        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th class="align-left">Birds</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
 
-    <h2>Welcome to the shopping cart</h2>
-    <table>
-        <thead>
-            <tr>
-                <th class="align-left">Birds</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Total</th>
-            </tr>
-        </thead>
+            <tbody></tbody>
+            
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Order Total:</th>
+                    
+                    <th id="order-total-cell"></th>
+                </tr>
+            </tfoot>
+        </table>
 
-        <tbody>
+        <p class="order-now-container">
+            <button id="place-order-button">Place Order</button>
+        </p>
+    </main>
 
-        </tbody>
-
-        <tfoot>
-            <tr class="connect">
-                
-                <th class="connect">Order Total:</th>
-                <th class="connect"></th>
-                <th class="connect"></th>
-                <th id="order-total-cell"></th>
-            </tr>
-        </tfoot>
-    </table>
-
-    <script type="module" src="app.js"></script>
+    <script type="module" src="shopping-cart.js"></script>
 </body>
-
 </html>

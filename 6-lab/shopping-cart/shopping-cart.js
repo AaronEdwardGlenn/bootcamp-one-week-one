@@ -1,6 +1,6 @@
 import birds from '../data/birds.js';
-import { findById, calcOrderTotal, toUSD } from '../common/makePretty.js';
-import renderLineItem from './render-table-row.js';
+import { findById, calcOrderTotal, toUSD } from '../common/utils.js';
+import renderLineItem from './render-line-item.js';
 
 const tbody = document.querySelector('tbody');
 const orderTotalCell = document.getElementById('order-total-cell');
@@ -11,7 +11,6 @@ let cart;
 if (json) {
     cart = JSON.parse(json);
 }
-
 else {
     cart = [];
 }
@@ -30,7 +29,6 @@ orderTotalCell.textContent = toUSD(orderTotal);
 if (cart.length === 0) {
     placeOrderButton.disabled = true;
 }
-
 else {
     placeOrderButton.addEventListener('click', () => {
         localStorage.removeItem('CART');
